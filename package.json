@@ -1,0 +1,23 @@
+{
+  "name": "Teste-Back-End---Mateus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mateusjf/Teste-Back-End---Mateus.git",
+  "author": "Mateus <mateusjf_melo@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.2"
+  },
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
