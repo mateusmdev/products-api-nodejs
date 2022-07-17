@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 app.use('/uploads', express.static(__dirname + '/uploads'))
 
@@ -8,6 +9,7 @@ const categoryRouter = require('./src/routes/category.js')
 const productRouter = require('./src/routes/product.js')
 const imageRouter = require('./src/routes/image.js')
 
+app.use(cors())
 app.use(express.urlencoded( {extended: false} ))
 app.use(express.json())
 

@@ -1,4 +1,9 @@
 const Image = require('../models/image.js')
+const { unlink } = require('fs')
+const { promisify } = require('util')
+const path = require('path')
+
+const unlinkAsync = promisify(unlink)
 
 module.exports = {
     async findAll(req, res) {
@@ -142,7 +147,8 @@ module.exports = {
                 }
             })
             if (image) {
-                await image.destroy()
+                const filepath = path.join('src/uploads', filename)
+                const a = await Promise.all([image.destroy(), unlinkAsync(filepath)])
 
                 return res.status(201).json({
                     message: 'Image deletada!',
